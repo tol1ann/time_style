@@ -25,3 +25,4 @@ class Outfit(models.Model):
 class Thing(models.Model):
     outfit = models.ForeignKey(Outfit, on_delete=models.CASCADE, verbose_name='Оутфит')
 
+
