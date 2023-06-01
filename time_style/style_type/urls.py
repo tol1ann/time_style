@@ -9,5 +9,5 @@ router.register(r'things', views.ThingViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
-    router.urls
-]
+
+] + router.urls

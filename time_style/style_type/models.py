@@ -17,7 +17,6 @@ class Outfit(models.Model):
     photo = models.ImageField("Изображение", upload_to="outfits/")
     name = models.CharField('Название', max_length=34, default='Default Outfit')
 
-
     def __str__(self):
         return self.name
 
