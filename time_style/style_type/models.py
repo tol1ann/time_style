@@ -13,15 +13,18 @@ class Category(models.Model):
 
 class Outfit(models.Model):
     """Аутфиты"""
-    category = models.ForeignKey(Category, verbose_name='Категория', on_delete=models.CASCADE)
+    category = models.ForeignKey(
+        Category, verbose_name='Категория', on_delete=models.CASCADE)
     photo = models.ImageField("Изображение", upload_to="outfits/")
-    name = models.CharField('Название', max_length=34, default='Default Outfit')
+    name = models.CharField('Название', max_length=34,
+                            default='Default Outfit')
 
     def __str__(self):
         return self.name
 
 
 class Thing(models.Model):
-    outfit = models.ForeignKey(Outfit, on_delete=models.CASCADE, verbose_name='Аутфит')
-
-
+    outfit = models.ForeignKey(
+        Outfit, on_delete=models.CASCADE, verbose_name='Аутфит')
+    photo = models.ImageField("Изображение", upload_to="things/")
+    name = models.CharField('Название', max_length=34, default='Default Thing')
